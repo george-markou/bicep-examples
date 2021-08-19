@@ -1,8 +1,8 @@
 param resourceTags object = {
   
 }
-param adminUsername string = 'gmarkou'
-param adminPassword string = '40palikaria!!'
+param adminUsername string = 'ausername'
+param adminPassword string = 'somethingmemorable'
 param computerName string = 'bicepwinvm'
 
 resource vm1 'Microsoft.Compute/virtualMachines@2021-04-01' = {

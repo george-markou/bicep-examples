@@ -1,7 +1,8 @@
-param RecoveryServicesVaultName string = 'bicep'
+param namePrefix string = 'namePrefix'
+var RecoveryServicesVaultName = '${namePrefix}-rsv'
 
 resource vault 'Microsoft.RecoveryServices/vaults@2021-03-01' = {
-  name: '${RecoveryServicesVaultName}-rsv'
+  name: RecoveryServicesVaultName
   location: 'westeurope'
   sku: {
     name: 'RS0'
