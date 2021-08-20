@@ -1,2 +1,2 @@
 # bicep-examples
-A repository full of practical examples of Bicep Language
+Welcome to A repository full of practical examples of Bicep Language!
