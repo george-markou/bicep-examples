@@ -3,7 +3,7 @@ param resourceGroup string = 'prod-net-rg'
 param bastionHostName string = 'prod-bas-01'
 param subnetId string = 'AzureBastionSubnet'
 param bastionHostSku string = 'Basic'
-param bastionHostScaleUnits string = '2'
+/* param bastionHostScaleUnits string = '2'    */
 param publicIpAddressName string = 'prod-bastion-pip'
 
 resource publicIpAddressName_resource 'Microsoft.Network/publicIpAddresses@2019-02-01' = {
@@ -38,10 +38,5 @@ resource bastionHostName_resource 'Microsoft.Network/bastionHosts@2020-11-01' = 
         }
       }
     ]
-    scaleUnits: bastionHostScaleUnits
   }
-  tags: {}
-    dependsOn: [
-    '[resourceId(variables("resourceGroup"),"Microsoft.Network/publicIpAddresses",variables("publicIpAddressName"))]'
-   ]
 }

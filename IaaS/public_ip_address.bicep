@@ -1,5 +1,4 @@
 // description
-//param publicIpName1 string = 'pip-fgt-01'
 param location string = 'westeurope'
 param publicIPAllocationMethod string = 'Static'
 param publicIpSku string = 'Standard'
