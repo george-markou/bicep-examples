@@ -1,7 +1,7 @@
-// Define Target Scope, for resource group the preferred scope is 'subscription'
+// Specify Target Scope, for resource group the preferred scope is 'subscription'
 targetScope = 'subscription'
 
-// Defince Resource Group custom properties such as the resource group names and resource tags.
+// Specify Resource Group custom properties such as the resource group names and resource tags.
 param location string = 'westeurope'
 param resourceGroupNames array = [
   'rg01'
