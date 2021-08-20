@@ -10,9 +10,9 @@ param resourceGroupNames array = [
 ]
 param resourceTags object = {
   Application: 'Bicep'
-  CostCenter: 'Markou.me'
+  CostCenter: 'Marketing'
   Environment: 'Production'
-  Owner: 'Markou.me'
+  Owner: 'George Markou'
 }
 
 resource createRG 'Microsoft.Resources/resourceGroups@2021-04-01' = [for name in resourceGroupNames: {
