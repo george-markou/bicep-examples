@@ -1,13 +1,9 @@
 // Define Target Scope, for resource group the preferred scope is 'subscription'
 targetScope = 'subscription'
 
-// Defince Resource Group custom properties such as the resource group names and resource tags.
+// Defince Resource Group custom properties such as resource group name, preferred region and resource tags.
+param name string = 'myrg'
 param location string = 'westeurope'
-param resourceGroupNames array = [
-  'rg01'
-  'rg02'
-  'rg03'
-]
 param resourceTags object = {
   Application: 'Bicep'
   CostCenter: 'Marketing'
@@ -16,8 +12,8 @@ param resourceTags object = {
 }
 
 // Create Resource Groups
-resource createRG 'Microsoft.Resources/resourceGroups@2021-04-01' = [for name in resourceGroupNames: {
+resource createRG 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: name
   location: location
   tags: resourceTags
-}]
+}
