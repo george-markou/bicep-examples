@@ -1,7 +1,7 @@
 // Define VNET custom properties such as Name, IP Address Space and Location
 param vnetName string = 'sample-vnet'
 param vnetaddressPrefix string = '192.168.0.0/16'
-param vnetLocation string = 'westeurope'
+param vnetLocation string = 'westeurope' //Instead of explicit location, the function resourceGroup().location can be used.
 
 // Define VNET subnet custom properties 
 param subnetName1 string = 'AzureFirewallSubnet'
