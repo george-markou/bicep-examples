@@ -19,4 +19,4 @@ Take this [learning path](https://docs.microsoft.com/en-us/learn/paths/bicep-dep
 ## Additional learning materials
 
 * Books
-1 [Getting started with Bicep: Infrastructure as code on Azure](https://www.amazon.com/Getting-started-Bicep-Infrastructure-Azure/dp/B098WK3MR7)
+    * [Getting started with Bicep: Infrastructure as code on Azure](https://www.amazon.com/Getting-started-Bicep-Infrastructure-Azure/dp/B098WK3MR7)
