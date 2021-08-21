@@ -15,7 +15,7 @@ param spokevnetaddressPrefix string = '10.1.0.0/16'
 param spokesubnetName string = 'spoke-snet'
 param spokesubnetPrefix string = '10.1.0.0/24'
 
-// Specify Resource Tags
+// Specify resource tags
 param resourceTags object = {
   Application: 'Bicep'
   CostCenter: 'Marketing'
