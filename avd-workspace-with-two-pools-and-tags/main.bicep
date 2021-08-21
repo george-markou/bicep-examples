@@ -1,4 +1,4 @@
-// Specify AVD Workspace and Host pools custom properties such as name,location and resource tags.
+// Specify AVD Workspace and Host pools custom properties such as name,location and resource tags
 param avdwksName string = 'myavdworkspace'
 param avdfirstpool string = 'myfirsthostpool'
 param avdsecondpool string = 'mysecondpool'
