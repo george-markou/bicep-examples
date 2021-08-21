@@ -6,6 +6,6 @@ Hi there! It's been a while since I've started my journey with BicepLang and I w
 ## Required Toolset
 Some of you may have already started authoring Bicep Templates, for those who haven't, consider using the following tools for best authoring experience.
 
-* [Bicep CLI](https://github.com/Azure/bicep/releases/latest/download/bicep-setup-win-x64.exe).- Compiles Bicep files into ARM templates. Cross-platform.
+* [Bicep CLI](https://github.com/Azure/bicep/releases/latest/download/bicep-setup-win-x64.exe) - Compiles Bicep files into ARM templates. Cross-platform.
 * [Visual Studio Code](https://aka.ms/vscode) - For authoring Bicep Templates
 * [Bicep VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) - Authoring support, intellisense, validation. Optional, but recommended
