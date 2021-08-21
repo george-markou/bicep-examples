@@ -1,4 +1,4 @@
-# A repository full of practical syntax examples for Bicep Languange
+# A repository full of practical syntax examples for Bicep languange
 
 ## Welcome
 Hi there! It's been a while since I've started my journey with BicepLang and I wanted to share with all of you the templates that I've been authoring. For that reason, I've created this public Github repo that contains reusable templates. I haven't yet moved or refactored all of them yet, but we are getting there, soon :) Enjoy!
@@ -15,3 +15,8 @@ Some of you may have already started authoring Bicep Templates, for those who ha
 Take this [learning path](https://docs.microsoft.com/en-us/learn/paths/bicep-deploy/) to get started with Bicep.
 
 ![](./docs/learning-path.png)
+
+## Additional learning materials
+
+* Books
+1 [Getting started with Bicep: Infrastructure as code on Azure](https://www.amazon.com/Getting-started-Bicep-Infrastructure-Azure/dp/B098WK3MR7)
