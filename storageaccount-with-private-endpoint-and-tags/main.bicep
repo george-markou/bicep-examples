@@ -6,6 +6,7 @@ param skuName string = 'Standard_LRS'
 param accessTier string = 'Hot'
 param vnetName string = 'neworg-vnet' // E.g of an existing VNET
 param subnetName string = 'ApplicationSubnet' // E.g of an existing subnet contained in VNET that specified in previous parameter
+param subnetPrefix string = '10.0.2.0/24'
 param iphostAllowed string = '8.8.8.8' // E.g of an IP host that is allowed to connect to storage account for management
 param privateEndpointName string = 'privateEndpoint${uniqueString(resourceGroup().name)}'
 param privateLinkConnectionName string = 'privateLink${uniqueString(resourceGroup().name)}'
@@ -26,7 +27,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2021-02-01' existing = {
 resource subnet 'Microsoft.Network/virtualNetworks/subnets@2021-02-01' = {
   name: '${vnetName}/${subnetName}'
   properties: {
-    addressPrefix: '10.0.2.0/24'
+    addressPrefix: subnetPrefix
     privateEndpointNetworkPolicies: 'Disabled'
     serviceEndpoints: [
       {
@@ -74,6 +75,7 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
 resource privateEndpoint 'Microsoft.Network/privateEndpoints@2020-06-01' = {
   name: privateEndpointName
   location: location
+  tags: resourceTags
   properties: {
     subnet: {
       id: subnet.id
@@ -95,6 +97,7 @@ resource privateEndpoint 'Microsoft.Network/privateEndpoints@2020-06-01' = {
 // Create Private DNS Zone
 resource privateDNSZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
   name: privateDNSZoneName
+  tags: resourceTags
   location: 'global'
 }
 
