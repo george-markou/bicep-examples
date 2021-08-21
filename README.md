@@ -14,4 +14,4 @@ Some of you may have already started authoring Bicep Templates, for those who ha
 
 Take this [learning path](https://docs.microsoft.com/en-us/learn/paths/bicep-deploy/) to get started with Bicep.
 
-![](./docs/learning-path.PNG)
+![](./docs/learning-path.png)
