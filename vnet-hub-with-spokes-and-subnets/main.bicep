@@ -25,7 +25,7 @@ param resourceTags object = {
 
 
 //Create Hub VNET and Subnets
-resource hubvnet 'Microsoft.Network/virtualnetworks@2015-05-01-preview' = {
+resource hubvnet 'Microsoft.Network/virtualNetworks@2021-02-01' = {
   name: hubvnetName
   location: location
   tags: resourceTags
@@ -59,7 +59,7 @@ resource hubvnet 'Microsoft.Network/virtualnetworks@2015-05-01-preview' = {
 }
 
 // Create Spoke VNET
-resource spokevnet 'Microsoft.Network/virtualnetworks@2015-05-01-preview' = {
+resource spokevnet 'Microsoft.Network/virtualNetworks@2021-02-01' = {
   name: spokevnetName
   location: location
   tags: resourceTags
