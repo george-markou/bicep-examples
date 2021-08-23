@@ -1,12 +1,12 @@
 // Specify custom properties such as the name, type, location, replication option, tier, VNET, subnet, PrivateDNS Zone and preferred tags
-param storageAccountName string = 'stgbicep'
+param storageAccountName string = 'mystg'
 param storageAccountType string = 'StorageV2'
 param location string = 'westeurope'
 param skuName string = 'Standard_LRS'
 param accessTier string = 'Hot'
-param vnetName string = 'neworg-vnet' // E.g of an existing VNET
-param subnetName string = 'ApplicationSubnet' // E.g of an existing subnet contained in VNET that specified in previous parameter
-param subnetPrefix string = '10.0.2.0/24'
+param vnetName string = 'myvnet' // E.g of an existing VNET
+param subnetName string = 'mysubnet' // E.g of an existing subnet contained in VNET that specified in previous parameter
+param subnetPrefix string = '10.0.2.0/24' //E.g address prefix of existing subnet
 param iphostAllowed string = '8.8.8.8' // E.g of an IP host that is allowed to connect to storage account for management
 param privateEndpointName string = 'privateEndpoint${uniqueString(resourceGroup().name)}'
 param privateLinkConnectionName string = 'privateLink${uniqueString(resourceGroup().name)}'

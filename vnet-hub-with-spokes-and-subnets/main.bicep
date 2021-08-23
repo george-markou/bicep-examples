@@ -1,5 +1,4 @@
 // Specify Hub VNET custom properties such as location, vnet name, ip address space, subnet names and prefixes
-param location string = 'westeurope'
 param hubvnetName string = 'myhubvnet'
 param hubsubnetName1 string = 'AzureFirewallSubnet'
 param hubsubnetName2 string = 'GatewaySubnet'
@@ -14,22 +13,25 @@ param spokevnetName string = 'myspokevnet'
 param spokevnetaddressPrefix string = '10.1.0.0/16'
 param spokesubnetName string = 'spoke-snet'
 param spokesubnetPrefix string = '10.1.0.0/24'
+param serviceEndpoint string = 'Microsoft.Storage'
 
-// Specify resource tags
+
+// Specify deployment common properties
 param resourceTags object = {
   Application: 'Bicep'
   CostCenter: 'Marketing'
   Environment: 'Production'
   Owner: 'George Markou'
 }
-
+param enableDdosProtection bool = false
+param location string = 'westeurope'
 
 //Create Hub VNET and Subnets
 resource hubvnet 'Microsoft.Network/virtualNetworks@2021-02-01' = {
   name: hubvnetName
   location: location
   tags: resourceTags
-   properties: {
+  properties: {
     addressSpace: {
       addressPrefixes: [
         hubvnetaddressPrefix
@@ -42,19 +44,20 @@ resource hubvnet 'Microsoft.Network/virtualNetworks@2021-02-01' = {
           addressPrefix: firewallsubnetPrefix
         }
       }
-        {
-          name: hubsubnetName2
-          properties: {
-            addressPrefix: gatewaysubnetPrefix
-          }
+      {
+        name: hubsubnetName2
+        properties: {
+          addressPrefix: gatewaysubnetPrefix
         }
-        {
-          name: hubsubnetName3
-          properties: {
-            addressPrefix: bastionsubnetPrefix
-          }
-        }        
+      }
+      {
+        name: hubsubnetName3
+        properties: {
+          addressPrefix: bastionsubnetPrefix
+        }
+      }
     ]
+  enableDdosProtection: enableDdosProtection
   }
 }
 
@@ -63,7 +66,7 @@ resource spokevnet 'Microsoft.Network/virtualNetworks@2021-02-01' = {
   name: spokevnetName
   location: location
   tags: resourceTags
-   properties: {
+  properties: {
     addressSpace: {
       addressPrefixes: [
         spokevnetaddressPrefix
@@ -74,9 +77,21 @@ resource spokevnet 'Microsoft.Network/virtualNetworks@2021-02-01' = {
         name: spokesubnetName
         properties: {
           addressPrefix: spokesubnetPrefix
+          serviceEndpoints: [
+            {
+              service: serviceEndpoint
+              locations: [
+                location
+              ]
+            }
+          ]
+          delegations: []
+          privateEndpointNetworkPolicies: 'Enabled'
+          privateLinkServiceNetworkPolicies: 'Enabled'
         }
-      }        
+      }
     ]
+    enableDdosProtection: enableDdosProtection
   }
 }
 

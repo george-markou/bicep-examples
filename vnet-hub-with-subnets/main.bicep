@@ -8,6 +8,7 @@ param vnetaddressPrefix string = '10.0.0.0/16'
 param firewallsubnetPrefix string = '10.0.0.0/26'
 param gatewaysubnetPrefix string = '10.0.0.128/26'
 param bastionsubnetPrefix string = '10.0.1.0/27'
+param enableDdosProtection bool = false
 param resourceTags object = {
   Application: 'Bicep'
   CostCenter: 'Marketing'
@@ -46,5 +47,6 @@ resource hubvnet 'Microsoft.Network/virtualNetworks@2021-02-01' = {
           }
         }        
     ]
+    enableDdosProtection: enableDdosProtection
   }
 }

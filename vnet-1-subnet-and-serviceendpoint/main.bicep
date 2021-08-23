@@ -2,6 +2,7 @@
 param vnetName string = 'myvnet'
 param vnetaddressPrefix string = '192.168.0.0/16'
 param vnetLocation string = 'westeurope' //Instead of explicit location, the function resourceGroup().location can be used.
+param enableDdosProtection bool = false
 
 // Specify VNET subnet custom properties 
 param subnetName1 string = 'mysubnet'
@@ -30,11 +31,16 @@ resource vnet 'Microsoft.Network/virtualNetworks@2021-02-01' = {
               locations: [
                 vnetLocation
               ]
+              
             }
           ]
+          delegations: []
+          privateEndpointNetworkPolicies: 'Enabled'
+          privateLinkServiceNetworkPolicies: 'Enabled'
         }
       }
     ]
+  enableDdosProtection: enableDdosProtection
   }
 }
 
