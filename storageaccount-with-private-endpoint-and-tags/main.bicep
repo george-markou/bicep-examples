@@ -7,7 +7,8 @@ param accessTier string = 'Hot'
 param vnetName string = 'myvnet' // E.g of an existing VNET
 param subnetName string = 'mysubnet' // E.g of an existing subnet contained in VNET that specified in previous parameter
 param subnetPrefix string = '10.0.2.0/24' //E.g address prefix of existing subnet
-param iphostAllowed string = '8.8.8.8' // E.g of an IP host that is allowed to connect to storage account for management
+param iphost1Allowed string = '8.8.8.8' // E.g of an IP host that is allowed to connect to storage account for management
+param iphost2Allowed string = '4.4.4.4' // E.g of an IP host that is allowed to connect to storage account for management
 param privateEndpointName string = 'privateEndpoint${uniqueString(resourceGroup().name)}'
 param privateLinkConnectionName string = 'privateLink${uniqueString(resourceGroup().name)}'
 param privateDNSZoneName string = 'privatelink.blob.core.windows.net'
@@ -62,7 +63,11 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
       ]
       ipRules: [
         {
-          value: iphostAllowed
+          value: iphost1Allowed
+          action: 'Allow'
+        }
+        {
+          value: iphost2Allowed
           action: 'Allow'
         }
       ]
