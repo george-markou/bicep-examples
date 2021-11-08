@@ -1,5 +1,3 @@
-targetScope = 'subscription'
-
 @description('Specify Custom Advisor properties')
 param actiongroup1 string = '/subscriptions/xxxxxxxxxxxxx/resourceGroups/some-rg/providers/microsoft.insights/actionGroups/itadmin'
 param digestName string = 'WeeklyDigest'
