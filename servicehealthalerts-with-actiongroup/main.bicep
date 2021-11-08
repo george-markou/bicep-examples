@@ -5,7 +5,7 @@ param phoneNumber string = '6900000000'
 param emailReceiversgroup1 string = 'itadminsMAIL'
 param emailAddressReceiversgroup1 string = 'itadmins@markou.me'
 param smsReceiversgroup1 string = 'itadminsSMS'
-param serviceHealthAlertsName string = 'servicehealthalert'
+param serviceHealthAlertsName string = 'Service Health'
 
 
 
@@ -33,6 +33,7 @@ resource actiongroup 'microsoft.insights/actionGroups@2019-06-01' = {
   }
 }
 
+
 resource servicehealthalerts 'Microsoft.Insights/activityLogAlerts@2020-10-01' = {
   name: serviceHealthAlertsName
   location: location
@@ -41,7 +42,7 @@ resource servicehealthalerts 'Microsoft.Insights/activityLogAlerts@2020-10-01' =
       allOf: [
         {
           field: 'category'
-          equals: 'ResourceHealth'
+          equals: 'ServiceHealth'
         }
         {
           field: 'status'
