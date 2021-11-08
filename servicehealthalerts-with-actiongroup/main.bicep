@@ -7,8 +7,6 @@ param emailAddressReceiversgroup1 string = 'itadmins@markou.me'
 param smsReceiversgroup1 string = 'itadminsSMS'
 param serviceHealthAlertsName string = 'Service Health'
 
-
-
 resource actiongroup 'microsoft.insights/actionGroups@2019-06-01' = {
   name: actiongroup1
   location: location
