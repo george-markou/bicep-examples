@@ -1,3 +1,4 @@
+@description('Specify Action Group properties')
 param actiongroup1 string = 'itadmins'
 param location string = 'global'
 param countryCode string = '1'
@@ -6,6 +7,7 @@ param emailReceiversgroup1 string = 'itadminsMAIL'
 param emailAddressReceiversgroup1 string = 'itadmins@markou.me'
 param smsReceiversgroup1 string = 'itadminsSMS'
 
+@description('Create Action Group')
 resource actiongroup 'microsoft.insights/actionGroups@2019-06-01' = {
   name: actiongroup1
   location: location
