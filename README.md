@@ -10,6 +10,8 @@ Some of you may have already started authoring Bicep Templates, for those who ha
 * [Visual Studio Code](https://aka.ms/vscode) - For authoring Bicep Templates
 * [Bicep VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) - Authoring support, intellisense, validation. Optional, but recommended
 
+Read my blog post [here](https://www.markou.me/2021/11/install-bicep-tools-using-winget/) on how you can quickly prepare your system to start authoring Bicep Templates.
+
 ## Bicep learning path on Microsoft Learn
 
 Take this [learning path](https://docs.microsoft.com/en-us/learn/paths/bicep-deploy/) to get started with Bicep.
